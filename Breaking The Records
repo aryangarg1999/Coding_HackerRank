@@ -25,3 +25,6 @@ vector<int> breakingRecords(vector<int> scores)
 
     return {max_count, min_count} ;
 }
+
+
+https://youtu.be/d1VEUMC6gbY
