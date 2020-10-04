@@ -1,0 +1,34 @@
+void plusMinus(vector<int> arr) 
+{
+
+    int pos = 0 ;
+    int zero = 0 ;
+    int neg = 0 ;
+
+    int n = arr.size() ;
+
+    for(int i=0; i<n; i++)
+    {
+        if(arr[i] > 0)
+        pos++ ;
+
+        else if(arr[i] < 0)
+        neg++ ;
+
+        else
+        zero++ ;
+
+    }
+
+    double total = (double)n ;
+
+    double ans1 = (double)pos/total ;
+    double ans2 = (double)neg/total ;
+    double ans3 = (double)zero/total ;
+
+    cout<<fixed<<setprecision(6)<<ans1<<endl ;
+    cout<<fixed<<setprecision(6)<<ans2<<endl ;
+    cout<<fixed<<setprecision(6)<<ans3<<endl ;
+
+
+}
