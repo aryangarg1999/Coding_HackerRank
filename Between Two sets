@@ -1,0 +1,69 @@
+int hcf(int a, int b)
+{
+    if(b == 0)
+    return a ;
+
+    return hcf(b, a%b) ;
+
+}
+
+int lcm(int a, int b)
+{
+    int val = a*b ;
+    int h = hcf(a, b) ;
+
+    return val/h ;
+}
+
+
+/*
+ * Complete the 'getTotalX' function below.
+ *
+ * The function is expected to return an INTEGER.
+ * The function accepts following parameters:
+ *  1. INTEGER_ARRAY a
+ *  2. INTEGER_ARRAY b
+ */
+
+int getTotalX(vector<int> a, vector<int> b) 
+{
+    int l = a[0] ;
+    int n = a.size() ;
+    
+    for(int i=1; i<n; i++)
+    {
+        l = lcm(l, a[i]) ;
+
+        if(l > 100)
+        return 0 ;
+    }
+
+    n = b.size() ;
+
+    int h = b[0] ;
+
+    for(int i=1; i<n; i++)
+    {
+        h = hcf(h, b[i]) ;
+        //cout<<"HCF is : "<<h<<endl ;
+    }
+
+    //cout<<"The total HCF of the array is : "<<h<<endl ;
+
+    if(l > h)
+    return 0 ;
+
+    if(h%l != 0)
+    return 0 ;
+
+    int count =0 ;
+
+    for(int i= l; i<=h; i+=l)
+    {
+        if(h%i == 0)
+        count++ ;
+
+    }
+
+    return count ;    
+}
