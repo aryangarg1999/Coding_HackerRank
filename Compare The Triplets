@@ -1,0 +1,28 @@
+vector<int> compareTriplets(vector<int> a, vector<int> b) 
+{
+    int count_alice =0 ;
+    int count_bob =0 ;
+
+    if(a[0] > b[0])
+    count_alice++ ;
+
+    else if(a[0] < b[0])
+    count_bob++ ;
+
+
+    if(a[1] > b[1])
+    count_alice++ ;
+
+    else if(a[1] < b[1])
+    count_bob++ ;
+
+    if(a[2] > b[2])
+    count_alice++ ;
+
+    else if(a[2] < b[2])
+    count_bob++ ;
+
+    return {count_alice, count_bob} ;
+
+
+}
