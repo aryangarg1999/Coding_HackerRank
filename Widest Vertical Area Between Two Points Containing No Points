@@ -1,0 +1,25 @@
+int maxWidthOfVerticalArea(vector<vector<int>>& points) 
+    {
+        vector<pair<int,int>>v ;
+        
+        for(int i=0; i<points.size(); i++)
+        {
+            int val1 = points[i][0] ;
+            int val2 = points[i][1] ;
+            v.push_back({val1, val2}) ;
+        }
+        
+        sort(v.begin(), v.end()) ;
+        
+        int max1 = 0  ;
+        
+        for(int i=1; i<v.size(); i++)
+        {
+            int temp = v[i].first-v[i-1].first ;
+            max1 = max(max1, temp) ;
+        }
+        
+        return max1 ;
+        
+        
+    }
